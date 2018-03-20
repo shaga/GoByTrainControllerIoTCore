@@ -59,12 +59,8 @@ namespace GoByTrainController.ViewModels
         private async void Initialize()
         {
             var gpio = GpioController.GetDefault();
-            if (gpio == null)
-            {
-                throw new Exception("hoge");
-            }
 
-            _statusLed = gpio.OpenPin(3);
+            _statusLed = gpio?.OpenPin(3) ?? throw new Exception("hoge");
             _emergencyLed = gpio.OpenPin(4);
 
 

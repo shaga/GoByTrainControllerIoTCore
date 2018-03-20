@@ -182,7 +182,7 @@ namespace GoByTrainController.Models
                 return;
             }
 
-            //_timerReadBattery.Start();
+            _timerReadBattery.Start();
             _semaphore.Release();
         }
 
